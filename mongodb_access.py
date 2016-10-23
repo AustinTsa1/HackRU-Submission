@@ -1,12 +1,12 @@
-#from flask import Flask 
-from flask_pymongo import PyMongo 
+from pymongo import MongoClient
+#from flask_pymongo import PyMongo 
 
 #app = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'user_schedules_db'
-app.config['MONGO_URI'] = 'mongodb://yerdman:hackru2016@ds063946.mlab.com:63946/user_schedules_db'
+MONGO_DBNAME = 'user_schedules_db'
+MONGO_URI = 'mongodb://yerdman:hackru2016@ds063946.mlab.com:63946/user_schedules_db'
 
-mongo = PyMongo(app) 
+mongo = MongoClient(MONGO_URI)
 
 #@app.route('/add_user')
 def add_user(number,event):

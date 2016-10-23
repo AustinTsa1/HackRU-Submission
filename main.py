@@ -1,13 +1,13 @@
 from flask import Flask, request, render_template
-import twilio.twim1
-from getSchedule import *
+from twilio import twiml
+from get_schedule import *
 from mongodb_access import *
 from string_manipulation import *
 #imports classes
 
 app = Flask(__name__)
 
-@app.route("/", methods = ['GET', 'POST'])
+@app.route("/x", methods = ['GET', 'POST'])
 def checklist():
 	number = request.form['From']
 	message_body = request.form['Body']
@@ -35,6 +35,6 @@ def checklist():
 def index(user=None):
 	return render_template("user.html", user=user)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
 	app.run()
 
