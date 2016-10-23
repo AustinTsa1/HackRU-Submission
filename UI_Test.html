@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+        <title>Website</title>
+        <center><h1>Welcome</h1></center>
+    </head>
+    <body>
+<form action="welcome.php" method="post">
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">	
+      <input type="text" placeholder="Name" name = "name"/>
+      <button>login</button>
+    </form>
+  </div>
+</div>
+
+<script>
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+
+</script>
+
+
+    </body>
+</html>
