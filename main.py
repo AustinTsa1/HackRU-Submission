@@ -15,17 +15,12 @@ def checklist():
 	if (message_body == "schedule"):
 		#RESPONSE TO PHONE; getSchedule() splits up string
 		message = get_schedule(get_events(number))
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> 3a20231f98fcbd42df624d069e0911330e211ccf
 		resp = twiml.Response()
 		resp.message(message)
 		return str(resp)	#returns message to user
 	elif(message_body == "clear"):
 		remove_events(number)
-		return str("Done!")
 	else:
 		#PUT USERS INFO IN A MONGODB DATABASE
 		if (get_events(number) == "ERROR"):
