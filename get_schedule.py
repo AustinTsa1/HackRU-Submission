@@ -8,7 +8,8 @@ def get_schedule(messages):
 			start_time = val[2]
 			end_time = val[3]
 			date = val[4]
-			names.append(str(i+1) + ': ' + 'You have ' + event + ' at ' + location + '. It starts at ' + start_time + ' \nand will end at ' + end_time + ' on ' + date + '.\n\n')
+			notify = val[5]
+			names.append(str(i+1) + ': ' + 'You have ' + event + ' at ' + location + '. It starts at ' + start_time + ' \nand will end at ' + end_time + ' on ' + date + '.\nYou will be reminded\n' + notify + ' minutes before the event.\n\n')
 	
 		z = ""
 
@@ -19,4 +20,4 @@ def get_schedule(messages):
 	#print(z)
 	return(z)
 
-#event,location,start_time,end_time,date
+#event,location,start_time,end_time,date,minutesbeforenotify
