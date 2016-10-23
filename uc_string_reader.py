@@ -2,17 +2,17 @@ import datetime
 import calendar
 import time
 
-	
+#SAMPLE_INPUT -> "going to the casc for hackru at 10:00 to 12:00 today"
+
 def read_string(uc_string):
 	array = uc_string.split(" ")
-	#if(triggered(uc_string) == 'true'):
+	if(triggered(uc_string) == 'true'):
 	start_time = find_start_time(array)
 	end_time = find_end_time(array)
 	title = find_title(array)
 	location = find_location(array)
 	date = find_date(array)
 	x = (str(title+","+location+","+start_time+","+end_time+","+date+","+"30"))
-	print (x)
 	return x
 
 def find_start_time(array):
@@ -91,7 +91,4 @@ def triggered(array):
 			if(a == b):
 				return 'true'
 	return 'false'
-
-#if __name__ == "__main__":
-#	main()
 
