@@ -1,7 +1,7 @@
 from flask import Flask 
 from flask_pymongo import PyMongo 
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'user_schedules_db'
 app.config['MONGO_URI'] = 'mongodb://yerdman:hackru2016@ds063946.mlab.com:63946/user_schedules_db'
