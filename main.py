@@ -9,19 +9,19 @@ app = Flask(__name__)
 def checklist():
 	number = request.form['From']
 	message_body = request.form['Body']
-	//INSERT CODE TO SPLIT UP MESSAGE BODY
 
-	//PUT RESULTING ARRAY IN A MONGODB DATABASE
+	if (message_body == "schedule"):
+		#RESPONSE TO PHONE; getSchedule() splits up string
+		message = getSchedule()
 
-	//RESPONSE TO PHONE
-	message = getSchedule()
+		resp = twilio.twiml.Response()
+		resp.message(message)
+		return str(resp)	#returns message to user
+	else:
+		#PUT USERS INFO IN A MONGODB DATABASE
 
-	resp = twilio.twiml.Response()
-	resp.message(message)
 
-	return str(resp)
-
-	return render_template("login.html")
+	#return render_template("login.html")
 
 @app.route("/<user>")
 def index(user=None):
