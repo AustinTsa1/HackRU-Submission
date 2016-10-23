@@ -9,13 +9,12 @@ app.config['MONGO_URI'] = 'mongodb://yerdman:hackru2016@ds063946.mlab.com:63946/
 mongo = PyMongo(app) 
 
 @app.route('/add_user')
-def add_user(name,number,event):
-	#name = 'Avin'
+def add_user(number,event):
 	#number = '9873049872'
 	#event = [1,2,3]
 	#events = [event]
 	user = mongo.db.user_schedules_db
-	user.insert({'name' : name, 'number' : number,'events' : events})
+	user.insert({'number' : number,'events' : events})
 	return 'Added User!'
 
 @app.route('/add_event')
@@ -42,21 +41,6 @@ def get_events(number):
 		pass
 	finally:
 		pass
-
-@app.route('/get_name')
-def get_name(number):
-	#number = '9873049872'
-	user = mongo.db.user_schedules_db
-	try:
-		current = user.find_one({'number' : number})
-		return(str(current['name']))
-	except Exception as e:
-		return("ERROR")
-	else:
-		pass
-	finally:
-		pass
-	
 
 #if __name__ == '__main__':
 #	app.run(debug=True)
