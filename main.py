@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template
 import twilio.twim1
-#import getSchedule.py ?
-#import string_manipulation.py ?
+from getSchedule import *
+from mongodb_access import *
+#imports classes
 
 app = Flask(__name__)
 
@@ -19,6 +20,7 @@ def checklist():
 		return str(resp)	#returns message to user
 	else:
 		#PUT USERS INFO IN A MONGODB DATABASE
+		if (get_name(number) == "ERROR")
 
 
 	#return render_template("login.html")
