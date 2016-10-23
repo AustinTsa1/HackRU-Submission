@@ -12,7 +12,7 @@ mongo = PyMongo(app)
 def add_user(number,event):
 	#number = '9873049872'
 	#event = [1,2,3]
-	#events = [event]
+	events = [event]
 	user = mongo.db.user_schedules_db
 	user.insert({'number' : number,'events' : events})
 	return 'Added User!'
