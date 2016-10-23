@@ -41,6 +41,15 @@ def get_events(number):
 	finally:
 		pass
 	return 'x'
+<<<<<<< HEAD
+
+def remove_events(number):
+	user = db.user_schedules_db
+	print("HERE")
+	db.user_schedules_db.remove({'number': number})
+	return 'success'
+=======
+>>>>>>> 3a20231f98fcbd42df624d069e0911330e211ccf
 
 #if __name__ == '__main__':
 #	app.run(debug=True)
