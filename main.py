@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import twilio.twim1
 from getSchedule import *
 from mongodb_access import *
+from string_manipulation import *
 #imports classes
 
 app = Flask(__name__)
@@ -13,14 +14,19 @@ def checklist():
 
 	if (message_body == "schedule"):
 		#RESPONSE TO PHONE; getSchedule() splits up string
-		message = getSchedule()
+		message = getSchedule(get_events(number))
 
 		resp = twilio.twiml.Response()
 		resp.message(message)
 		return str(resp)	#returns message to user
 	else:
 		#PUT USERS INFO IN A MONGODB DATABASE
-		if (get_name(number) == "ERROR")
+		if (get_events(number) == "ERROR"):
+			#if user isn't present in database add user
+			add_user(number, string_manipulation(message_body))
+		else:
+			#if user is present add event
+			add_event(number, string_manipulation(message_body))
 
 
 	#return render_template("login.html")

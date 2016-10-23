@@ -8,7 +8,7 @@ app.config['MONGO_URI'] = 'mongodb://yerdman:hackru2016@ds063946.mlab.com:63946/
 
 mongo = PyMongo(app) 
 
-@app.route('/add_user')
+#@app.route('/add_user')
 def add_user(number,event):
 	#number = '9873049872'
 	#event = [1,2,3]
@@ -17,7 +17,7 @@ def add_user(number,event):
 	user.insert({'number' : number,'events' : events})
 	return 'Added User!'
 
-@app.route('/add_event')
+#@app.route('/add_event')
 def add_event(number,event):
 	#number = '9873049872'
 	#event = [4,5,6]
@@ -28,7 +28,7 @@ def add_event(number,event):
 	return 'Added Messages!'
 
 
-@app.route('/get_events')
+#@app.route('/get_events')
 def get_events(number):
 	#number = '9873049872'
 	user = mongo.db.user_schedules_db
