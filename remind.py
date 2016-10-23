@@ -1,12 +1,12 @@
 from datetime import datetime
 import sched, time
 
-def populate(number, event)
+def populate(number, event):
 	start_time = event[2] #start time is third value in array
 	start_time.strip()
-	if ("pm" in start_time)
+	if ("pm" in start_time):
 		start_hour = 12
-	else
+	else:
 		start_hour = 0
 	
 	start_time.replace(start_time,'P','').replace(start_time,'M','').replace(start_time,'A','').replace(start_time,'p','').replace(start_time,'m','').replace(start_time,'a','')
@@ -25,9 +25,9 @@ def populate(number, event)
 	s.enterabs(timestamp, 1, send_alert, arguments = (event, number)) 
 
 
-def send_alert(event, number)
-    alert = "Reminder: You have an event, " + event[0] + " in 30 minutes."
-    resp = twiml.Response()
+def send_alert(event, number):
+	alert = "Reminder: You have an event, " + event[0] + " in 30 minutes."
+	resp = twiml.Response()
 	resp.message(alert)
 	return str(resp)	
 
